@@ -8,6 +8,9 @@ app.use(express.json());
 app.use(cors());
 app.use(routes);
 
+//controllers
+//require('./app/controllers/index')(app);
+
 // Quando não encontra rota, entra aqui:
 app.use((req, res, next) => {
     const erro = new Error('Não encontrado');
@@ -24,4 +27,7 @@ app.use((error, req, res, next) => {
 });
 
 app.use(errors());
-app.listen(3333);
+
+module.exports = app;
+
+
