@@ -24,5 +24,4 @@ app.use((error, req, res, next) => {
 });
 
 app.use(errors());
-
 app.listen(3333);

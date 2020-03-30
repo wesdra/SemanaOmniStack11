@@ -4,7 +4,6 @@ const IncidentController = require("./controllers/IncidentController");
 const ProfileController = require("./controllers/ProfileController");
 const SessionController = require("./controllers/SessionController");
 const { celebrate, Segments, Joi } = require('celebrate');
-
 const routes = express.Router();
 
 routes.get("/ongs", OngController.index);
