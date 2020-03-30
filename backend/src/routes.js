@@ -17,7 +17,11 @@ routes.post("/ongs", celebrate({
         uf: Joi.string().required().length(2),
     })
 }), OngController.store);
-routes.post("/sessions", SessionController.store);
+routes.post("/sessions",celebrate({
+    [Segments.BODY]: Joi.object().keys({
+        id: Joi.string().required(),
+    })
+}), SessionController.store);
 routes.get("/profile", celebrate({
     [Segments.HEADERS]:Joi.object({
         authorization: Joi.string().required(),
